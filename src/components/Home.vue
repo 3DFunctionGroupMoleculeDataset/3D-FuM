@@ -61,12 +61,12 @@
             <!-- <img :src="require('../assets/'+item+'.png')" alt /> -->
             <h3></h3>
             <!-- 播放的图片设置 -->
-            <div class="rno-1-logo-case">
+            <div class="rno-1-logo-case" style="height:100%">
               <!-- getImgUrl为函数名，具体函数使用方法见script部分 -->
               <!-- <el-image style="width: 100%; height: 100%" :src="getImgUrl(imgList[index], 'jpg')"
                 fit="contain"></el-image> -->
                 <el-image style="width: 100%; height: 100%" :src="getImgUrl(imgList[index], 'jpg')"
-                fit="contain" @click="handleImageClick(index)"></el-image>
+                :fit="contain" @click="handleImageClick(index)"></el-image>
             </div>
           </el-carousel-item>
         </el-carousel>

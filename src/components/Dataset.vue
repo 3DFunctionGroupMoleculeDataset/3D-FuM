@@ -305,10 +305,10 @@ export default {
       text: "",
       subText: null,
       imgList: ["1.jpg", "2.jpg", "3.jpg"],
-      overallImgList: ["valeric_acid.png", "butyric_acid.png", "3.png"],
-      pointCloudImg:["CHO1.png"],
-      BRICSImgList:["valeric_acid.png", "butyric_acid1.png", "3.png"],
-      oursImgList:["acid.png","3.png"],
+      overallImgList: ["valeric_acid", "butyric_acid", "3"],
+      pointCloudImg:["CHO1"],
+      BRICSImgList:["valeric_acid", "butyric_acid1", "3"],
+      oursImgList:["acid","3"],
       dataList: [],
       navList: [
         { name: '/ct2', navItem: 'Dataset', navIcon: 'el-icon-s-data' },
@@ -344,22 +344,25 @@ export default {
     },
     getPointCloudImgUrl(url){
       // const a =require("../assets/Atom_img/point_cloud/"+url);
-      const a = new URL('../assets/Atom_img/point_cloud/'+url,import.meta.url)
+      const a = new URL(`../assets/Atom_img/point_cloud/${url}.png`,import.meta.url)
       return a;
     },
     getBRICSImgUrl(url){
       // const a =require("../assets/Atom_img/BRICS/"+url);
-      const a =new URL('../assets/Atom_img/BRICS/'+url,import.meta.url)
+      // const a =new URL('../assets/Atom_img/BRICS/'+url,import.meta.url)
+      const a =new URL(`../assets/Atom_img/BRICS/${url}.png`,import.meta.url)
       return a;
     },
     getOursImgUrl(url){
       // const a =require("../assets/Atom_img/ours/"+url);
-      const a =new URL('../assets/Atom_img/ours/'+url,import.meta.url)
+      // const a =new URL('../assets/Atom_img/ours/'+url,import.meta.url)
+      const a =new URL(`../assets/Atom_img/ours/${url}.png`,import.meta.url)
       return a;
     },
     getOverallImgUrl(url, type) {
       // const a = require("../assets/Atom_img/overall/" + url);
-      const a =new URL('../assets/Atom_img/overall/'+url,import.meta.url)
+      // const a =new URL('../assets/Atom_img/overall/'+url,import.meta.url)
+      const a =new URL(`../assets/Atom_img/overall/${url}.png`,import.meta.url)
       return a;
       // if (type == "png") {
       //   const a = require("../assets/" + url + ".png");
