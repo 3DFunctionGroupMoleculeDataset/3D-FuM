@@ -1,0 +1,19 @@
+import { createRouter, createWebHistory } from "vue-router";
+const routes = [{
+    path: '/',
+    name: 'index',
+    // title: '首页',
+    component: () => import('../components/HelloWorld.vue'),
+}, {
+    path: '/hello1',
+    name: 'hello1',
+    // title: 'hello1',
+    component: () => import('../components/HelloWorld_1.vue'),
+}];
+
+const router=createRouter({
+    history:createWebHistory(),
+    routes,
+});
+
+export default router
