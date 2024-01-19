@@ -121,7 +121,7 @@ export default {
     return {
       text: "",
       subText: null,
-      imgList: ["Dataset.jpg", "Generation.jpg", "Leaderboard.jpg"],
+      imgList: ["Dataset", "Generation", "Leaderboard"],
       dataList: [],
       navList:[
             {name:'/ct2',navItem:'Dataset',navIcon:'el-icon-s-data'},
@@ -165,7 +165,7 @@ export default {
 
         // const b=new URL(`./assets/`+url,import.meta.url)
         console.log(`../assets/${url}`);
-        const b=new URL(`../assets/${url}`,import.meta.url);
+        const b=new URL(`../assets/${url}.jpg`,import.meta.url);
         console.log("b",b);
 
         // console.log("b", b);
