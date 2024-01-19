@@ -158,7 +158,7 @@ export default {
       } else if (type == "jpg") {
         // const b = require("../assets/" + url);
         // const b=import.meta.glob("../assets/" + url);
-        const b=new URL('../assets/'+url+'.jpg',import.meta.url)
+        const b=new URL('../assets/'+url,import.meta.url)
         // console.log("b", b);
         return b;
       }
