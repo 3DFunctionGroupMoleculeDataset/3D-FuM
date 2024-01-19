@@ -158,7 +158,16 @@ export default {
       } else if (type == "jpg") {
         // const b = require("../assets/" + url);
         // const b=import.meta.glob("../assets/" + url);
-        const b=new URL('../assets/'+url,import.meta.url)
+
+        // const b=new URL('./assets/'+url,import.meta.url)
+
+        // const b=new URL(`@/assets/`+url,import.meta.url)
+
+        // const b=new URL(`./assets/`+url,import.meta.url)
+        console.log(`../assets/${url}`);
+        const b=new URL(`../assets/${url}`,import.meta.url);
+        console.log("b",b);
+
         // console.log("b", b);
         return b;
       }
