@@ -53,7 +53,8 @@
       <!-- 主栏部分 -->
       <el-main>
 
-        <el-row class="custom-row">
+        <!-- <el-row class="custom-row"> -->
+          <el-row >
           <el-col :span="5">
             <el-card shadow="hover">
               <!-- <img src="../assets/Atom_img/overall/valeric_acid.png" fit="contain"
@@ -131,7 +132,7 @@
                 <!-- <span>Point Cloud</span> -->
                 <div class="bottom clearfix">
                   <!-- <time class="time">{{ currentDate }}</time> -->
-                  <el-button type="text" class="button" @click="pointCloudJump">Download</el-button>
+                  <!-- <el-button type="text" class="button" @click="pointCloudJump">Download</el-button> -->
                 </div>
               </div>
 
@@ -178,7 +179,7 @@
                 
                 <div class="bottom clearfix">
                   <!-- <time class="time">{{ currentDate }}</time> -->
-                  <el-button type="text" class="button" @click="BRICSJump">Download</el-button>
+                  <!-- <el-button type="text" class="button" @click="BRICSJump">Download</el-button> -->
                 </div>
               </div>
 
@@ -223,12 +224,26 @@
                 <!-- <span>3D Function Groups (ours)</span> -->
                 <div class="bottom clearfix">
                   <!-- <time class="time">{{ currentDate }}</time> -->
-                  <el-button type="text" class="button" @click="oursJump">Download</el-button>
+                  <!-- <el-button type="text" class="button" @click="oursJump">Download</el-button> -->
                 </div>
               </div>
 
             </el-card>
           </el-col>
+
+        </el-row>
+        <el-row>
+          <el-col :span="5" :offset="6">
+            <el-button type="text" class="button" @click="pointCloudJump">Download</el-button>
+          </el-col>
+
+          <el-col :span="5" :offset="1">
+            <el-button type="text" class="button" @click="BRICSJump">Download</el-button>
+        </el-col>
+        <el-col :span="6" :offset="1">
+          <el-button type="text" class="button" @click="oursJump">Download</el-button>
+        </el-col>
+
 
         </el-row>
 
