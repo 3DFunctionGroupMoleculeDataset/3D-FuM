@@ -17,6 +17,13 @@ const router = createRouter({
 
         },
         {
+            // 404pages
+            path: '/:catchAll(.*)',
+            
+            component: defineAsyncComponent(() => import(`../components/HelloWorld.vue`)),
+
+        },
+        {
             path: '/hello1',
             name: 'hello1',
             component: defineAsyncComponent(() => import(`../components/HelloWorld_1.vue`)),
