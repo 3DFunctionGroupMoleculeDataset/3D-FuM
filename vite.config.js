@@ -6,7 +6,7 @@ export default defineConfig({
     base:"vue3_page_test",
     resolve:{
         alias:{
-            '@':path.resolve(__dirname,'src'),
+            // '@':path.resolve(__dirname,'src'),
         }
     },
     server:{
