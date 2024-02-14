@@ -394,6 +394,8 @@ export default {
       window.location.href = 'https://github.com/3DFunctionGroupMoleculeDataset/PointCloudDataset';
     },
     BRICSJump(){
+      // window.location.href = 'https://www.google.com';
+
       window.location.href = 'https://github.com/3DFunctionGroupMoleculeDataset/BRICSDataset';
     },
     oursJump(){
