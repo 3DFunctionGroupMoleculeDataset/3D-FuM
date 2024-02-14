@@ -219,7 +219,7 @@
               <!-- </el-card-item> -->
               <div style="padding: 14px;">
                 <div style="height: 35px;">
-                  <span>3D Function Groups (ours)</span>
+                  <span>3D-FuM (ours)</span>
                 </div>
                 <!-- <span>3D Function Groups (ours)</span> -->
                 <div class="bottom clearfix">
@@ -390,13 +390,14 @@ export default {
       // }
     },
     pointCloudJump(){
-      window.location.href = 'https://www.google.com';
+      // window.location.href = 'https://www.google.com';
+      window.location.href = 'https://github.com/3DFunctionGroupMoleculeDataset/PointCloudDataset';
     },
     BRICSJump(){
-      window.location.href = 'https://www.google.com';
+      window.location.href = 'https://github.com/3DFunctionGroupMoleculeDataset/BRICSDataset';
     },
     oursJump(){
-      window.location.href = 'https://www.google.com';
+      window.location.href = 'https://github.com/3DFunctionGroupMoleculeDataset/3D-FuM_dataset';
     },
     // getSearch方法，根据输入框中的文字，对于后端进行接口的请求
     getSerach() {
