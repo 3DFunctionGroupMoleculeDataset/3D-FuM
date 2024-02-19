@@ -20,5 +20,6 @@
     "gh-pages": "^6.1.1",
     "vite": "^5.0.11"
   },
-  "homepage": "https://3DFunctionGroupMoleculeDataset.github.io/3DFunctionGroupMolecule"
+  
+  "homepage": "https://3DFunctionGroupMoleculeDataset.github.io/MolHierarchy_Explorer"
 }

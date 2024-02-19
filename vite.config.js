@@ -4,7 +4,8 @@ import * as path from 'path'
 import { fileURLToPath } from "url";
 
 export default defineConfig({
-    base:"3DFunctionGroupMolecule",
+    // base:"3DFunctionGroupMolecule",
+    base:"MolHierarchy_Explorer",
     resolve:{
         alias:{
             // '@':path.resolve(__dirname,'src'),
