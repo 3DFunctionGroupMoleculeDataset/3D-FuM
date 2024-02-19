@@ -296,6 +296,105 @@
 
             </el-tab-pane>
 
+            <el-tab-pane label="Equiformer Base" name="tab3">
+
+              <el-form ref="form3"  label-width="200px" style="height:400 px">
+                  <el-row >
+                    <el-col :span="10">
+                      <el-form-item label="Condition for Prediction:">
+                        
+                        <el-select v-model="form3.genCon" placeholder="Please select">
+                          
+                          <el-option value="alpha">&alpha;</el-option>
+                          <el-option value="delta">&Delta;<sub>&epsilon;</sub></el-option>
+                          <el-option value="HOMO">&epsilon;<sub>HOMO</sub></el-option>
+                          <el-option value="LUMO">&epsilon;<sub>LUMO</sub></el-option>
+                          <el-option value="mu">&mu;</el-option>
+                          <el-option value="cv">C<sub>v</sub></el-option>
+                          <el-option value="G">G</el-option>
+                          <el-option value="H">H</el-option>
+                          <el-option value="ZPVE">ZPVE</el-option>
+                  
+                        </el-select>
+                      </el-form-item>
+                    </el-col>
+                    <el-col :span="10" :offset="2">
+                      <el-switch v-model="form3.oneHot" active-text="Use one hot">
+                      </el-switch>
+                    </el-col>
+
+                  </el-row>
+
+
+                  <el-row >
+                    <el-col :span="10">
+                      <el-form-item label="File name for main function:">
+                   
+                        <el-input v-model="form3.fnameInput" placeholder="Please input">
+
+                        </el-input>
+                      </el-form-item>
+                    </el-col>
+
+                    <el-col :span="10" :offset="2">
+                      <el-form-item label="Model name:">
+          
+                        <el-input v-model="form3.mnameInput" placeholder="Please input">
+
+                        </el-input>
+                      </el-form-item>
+                    </el-col>
+
+                  </el-row>
+                  <el-row >
+                    <el-col :span="10">
+                      <el-form-item label="Learning rate:">
+                        <el-input-number v-model="form3.learningRate" placeholder="Please input" :step="1e-4">
+                        </el-input-number>
+                      </el-form-item>
+                    </el-col>
+                    <el-col :span="10" :offset="2">
+                      <el-form-item label="Radius of atom:">
+                        <el-input-number v-model="form3.radius" placeholder="Please input" :step="0.01">
+                        </el-input-number>
+                      </el-form-item>
+                    </el-col>
+                  </el-row>
+                  <el-row>
+                    <el-col :span="10">
+                      <el-form-item label="Number of basis:">
+                        <el-input-number v-model="form3.basis" placeholder="Please input" :step="1">
+                        </el-input-number>
+                      </el-form-item>
+                    </el-col>
+                    <el-col :span="10" :offset="2">
+                      <el-form-item label="Weight decay:">
+                        <el-input-number v-model="form3.weightDecay" placeholder="Please input" :step="1e-4">
+                        </el-input-number>
+                      </el-form-item>
+                    </el-col>
+                  </el-row>
+                
+                  <el-row >
+                    <el-col :span="10">
+                      <el-form-item label="Batch size:">
+                        <el-input-number v-model="form3.batch_size" placeholder="Please input" :step="1">
+                        </el-input-number>
+                      </el-form-item>
+                    </el-col>
+                    <el-col :span="10" :offset="2">
+                      <el-form-item label="Minimum learning rate:">
+                        <el-input-number v-model="form3.minlr" placeholder="Please input" :step="1e-6">
+                        </el-input-number>
+                      </el-form-item>
+                    </el-col>
+                  </el-row>
+
+                </el-form>
+              
+
+            </el-tab-pane>
+
           </el-tabs>
         
 
@@ -371,6 +470,18 @@ export default {
       text: "",
       subText: null,
       result: "",
+      form3:{
+        fnameInput:"main_qm9.py",
+        genCon:"",
+        oneHot:true,
+        mnameInput:"graph_attention_transformer_nonlinear_l2",
+        learningRate:5e-4,
+        minlr:1e-6,
+        batch_size:128,
+        radius:5.0,
+        basis:128,
+        weightDecay:5e-3,
+      },
       form2: {
         fnameInput: "train.py",
         genCon: "",
@@ -482,6 +593,35 @@ export default {
     'form1.saveModel'() {
       this.updateResult();
     },
+    'form3.fnameInput'(){
+      this.updateResult();
+    },
+    'form3.genCon'(){
+      this.updateResult();
+    },
+    'form3.oneHot'(){
+      this.updateResult();
+    },'form3.mnameInput'(){
+      this.updateResult();
+    },
+    'form3.learningRate'(){
+      this.updateResult();
+    },
+    'form3.minlr'(){
+      this.updateResult();
+    },
+    'form3.batch_size'(){
+      this.updateResult();
+    },
+    'form3.radius'(){
+      this.updateResult();
+    },
+    'form3.basis'(){
+      this.updateResult();
+    },
+    'form3.weightDecay'(){
+      this.updateResult();
+    },
     // form1(){
     //   deep:true,
     //   // this.result=this.updateResult();
@@ -561,6 +701,31 @@ export default {
           this.result = this.result + " --graph_embedding_dim 400 --patience 3";
         }
 
+      }
+      else if (this.activeTab === 'tab3') {
+        this.result = "";
+        if (this.form3.genCon !== "") {
+          this.result = "";
+          this.result = "python " + this.form3.fnameInput;
+          this.result=this.result+" --output-dir 'models/qm9/equiformer/"+this.form3.genCon+"/' ";
+          this.result=this.result+"--model-name '"+this.form3.mnameInput+"' ";
+          this.result=this.result+" --input-irreps '5x0e' --target "+this.form3.genCon;
+          this.result=this.result+" --data-path 'datasets/qm9' --batch_size "+this.form3.batch_size;
+          this.result=this.result+" --radius "+this.form3.radius;
+          this.result=this.result+" --num-basis "+this.form3.basis;
+          this.result=this.result+" --drop-path 0.0 --weight-decay "+this.form3.weightDecay;
+          this.result=this.result+" --lr "+this.form3.learningRate;
+          this.result=this.result+" --min-lr "+this.form3.minlr;
+          this.result=this.result+" --no-model-ema --no-amp";
+          if(this.form3.oneHot ===true){
+          this.result=this.result+" --feature-type 'one_hot'";
+
+        }
+        else{
+          this.result=this.result+" --feature-type 'original'";
+        }
+        }
+        
       }
       else {
         this.result = "Not available";
