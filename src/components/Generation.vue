@@ -25,11 +25,6 @@
           <span slot="title">Leaderboard</span>
         </el-menu-item>
 
-        <!-- <el-menu-item v-for="(item, i) in navList" :key="i" :index="item.name"> -->
-        <!-- <i class={{ item.navIcon }}></i> -->
-        <!-- <span slot="title">Dataset</span> -->
-        <!-- {{ item.navItem }} -->
-        <!-- </el-menu-item> -->
 
       </el-menu>
     </el-aside>
@@ -147,12 +142,7 @@
                         </el-input-number>
                       </el-form-item>
                     </el-col>
-                    <!-- <el-col :span="4" >
-                    <el-form-item label="Batch size:">
-                      <el-input-number v-model="form1.n_stability_samples" placeholder="Please input" step="1">
-                      </el-input-number>
-                    </el-form-item>
-                  </el-col> -->
+
                   </el-row>
                   <el-row >
                     <el-col :span="10">
@@ -211,12 +201,7 @@
 
                       </el-form-item>
                     </el-col>
-                    <!-- <el-col :span="3" >
-                    <el-form-item label="shuffle">
-                      <el-switch v-model="form2.shuffle"></el-switch>
-
-                    </el-form-item>
-                    </el-col> -->
+           
                   </el-row>
 
                   <el-row >
@@ -328,17 +313,7 @@
         
 
 
-        <!-- <div>
-          <div>
-            <el-input :value="result" readonly type="textarea" :rows="2"></el-input>
-          </div>
-
-          <br>
-          <div>
-            <el-button @click="copyToClipboard" icon="el-icon-document-copy">Copy</el-button>
-          </div>
-
-        </div> -->
+      
 
       </el-main>
     </el-container>

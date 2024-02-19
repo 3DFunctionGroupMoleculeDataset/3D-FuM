@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 
 export default defineConfig({
     // base:"3DFunctionGroupMolecule",
-    base:"MolHierarchy_Explorer",
+    base:"3D-FuM",
     resolve:{
         alias:{
             // '@':path.resolve(__dirname,'src'),
